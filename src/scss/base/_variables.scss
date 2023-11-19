@@ -1,0 +1,36 @@
+// Fuentes
+@font-face {
+	font-family: "Roboto";
+	src: url('fonts/Roboto/Roboto-Regular.ttf');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Roboto-Bold';
+	src: url('fonts/Roboto/Roboto-Bold.ttf');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'Roboto-Black';
+	src: url('fonts/Roboto/Roboto-Black.ttf');
+	font-weight: 900;
+}
+$fuente_principal: 'Roboto', sans-serif;
+$fuentePrincipalBold : 'Roboto-Bold' , sans-serif;
+$fuentePrincipalBlack: 'Roboto-Black' , sans-serif;
+
+// Media Queries
+$telefono: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Colores
+$primario: #E8505B;
+$secundario: #455A64;
+$negro: #000;
+$blanco: #FFF;
+$grisClaro: #ECEEEF;
+
+// Unidades
+$separacion: 5rem

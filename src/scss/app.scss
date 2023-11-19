@@ -1,8 +1,3 @@
-$color: blue;
-$color2: green;
+@use 'base';
+@use 'header';
 
-body {
-	background-color: $color;
-	font-size: 2rem;
-	display: flex;
-}

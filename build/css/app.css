@@ -1,8 +1,35 @@
-body {
-  background-color: blue;
-  font-size: 2rem;
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto/Roboto-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Roboto-Black";
+  src: url("fonts/Roboto/Roboto-Black.ttf");
+  font-weight: 900;
+}
+.header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+}
+
+h1 {
+  color: red;
+}
+
+h1 p {
+  background-color: gray;
 }
