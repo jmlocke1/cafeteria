@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/jmlocke1/cafeteria#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.69.5"
   }
 }
