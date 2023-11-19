@@ -1,7 +1,16 @@
-const { src, dest, watch } = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 // plumber evita que sass se detenga al encontrar un error
 const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
+/**
+ * En el package.json se debe añadir browserlist
+ * Se pueden encontrar configuraciones varias en
+ * https://browsersl.ist
+ * 
+ */
+const autoprefixer = require('autoprefixer');
+
 
 function css( done ) {
 	// Compilar sass
@@ -10,7 +19,8 @@ function css( done ) {
 		.pipe( plumber() )
 		// Compila css minificado
 		// .pipe( sass({ outputStyle: 'compressed'}) )
-		.pipe( sass({ outputStyle: 'expanded'}) )
+		.pipe( sass() )
+		.pipe( postcss([autoprefixer()]) )
 		.pipe( dest('build/css') )
 	done();
 }
@@ -21,4 +31,4 @@ function dev( done ) {
 }
 exports.css = css;
 exports.dev = dev;
-exports.default = dev;
+exports.default = series( css, dev);
