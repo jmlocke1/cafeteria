@@ -1,5 +1,6 @@
 const { src, dest, watch } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+// plumber evita que sass se detenga al encontrar un error
 const plumber = require('gulp-plumber');
 
 function css( done ) {
@@ -7,7 +8,9 @@ function css( done ) {
 	// pasos: 1 - Identificar archivo, 2- Compilarla, 3 - Guardar el .css
 	src('src/scss/app.scss')
 		.pipe( plumber() )
-		.pipe( sass() )
+		// Compila css minificado
+		// .pipe( sass({ outputStyle: 'compressed'}) )
+		.pipe( sass({ outputStyle: 'expanded'}) )
 		.pipe( dest('build/css') )
 	done();
 }
