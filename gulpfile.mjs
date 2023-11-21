@@ -18,7 +18,10 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 
 // Imágenes
+import cache from 'gulp-cache';
 import imagemin from 'gulp-imagemin';
+import webp from 'gulp-webp';
+import avif from 'gulp-avif';
 
 function css( done ) {
 	// Compilar sass
@@ -33,21 +36,43 @@ function css( done ) {
 	done();
 }
 
-function imagenes ( done ) {
-	src('src/img/**/*')
-		.pipe( imagemin({ optimizationLevel: 3 }) )
+function imagenes () {
+	return src('src/img/**/*')
+		.pipe( cache(imagemin({ optimizationLevel: 3 })) )
+		.pipe( dest('build/img') );
+}
+
+function versionWebp( done ) {
+	src('src/img/**/*.{png,jpg}')
+		.pipe( webp() )
+		.pipe( dest('build/img') );
+	done();
+}
+
+function versionAvif( done ) {
+	const opciones = {
+		quality: 30,
+		lossless: true
+	}
+	src('src/img/**/*.{png,jpg}')
+		.pipe( avif() )
 		.pipe( dest('build/img') );
 	done();
 }
 
 function dev( done ) {
 	watch( 'src/scss/**/*.scss', css );
-	watch('src/img/**/*', imagenes)
+	watch('src/img/**/*', allImages)
 	done();
 }
+
+const allImages = parallel( imagenes, versionWebp, versionAvif );
 export {
 	css as css,
 	dev as dev,
-	imagenes as imagenes
+	imagenes as imagenes,
+	versionWebp as versionWebp,
+	versionAvif,
+	allImages
 }
-export default series( imagenes, css, dev);
+export default parallel( allImages, css, dev);
