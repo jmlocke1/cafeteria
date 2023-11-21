@@ -1,16 +1,24 @@
-const { src, dest, watch, series, parallel } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
+import gulp from 'gulp';
+const { src, dest, watch, series, parallel } = gulp;
+
+// CSS y SASS
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
 // plumber evita que sass se detenga al encontrar un error
-const plumber = require('gulp-plumber');
-const postcss = require('gulp-postcss');
+import plumber from 'gulp-plumber';
+import postcss from 'gulp-postcss';
+
 /**
  * En el package.json se debe añadir browserlist
  * Se pueden encontrar configuraciones varias en
  * https://browsersl.ist
  * 
  */
-const autoprefixer = require('autoprefixer');
+import autoprefixer from 'autoprefixer';
 
+// Imágenes
+import imagemin from 'gulp-imagemin';
 
 function css( done ) {
 	// Compilar sass
@@ -27,6 +35,7 @@ function css( done ) {
 
 function imagenes ( done ) {
 	src('src/img/**/*')
+		.pipe( imagemin({ optimizationLevel: 3 }) )
 		.pipe( dest('build/img') );
 	done();
 }
@@ -36,7 +45,9 @@ function dev( done ) {
 	watch('src/img/**/*', imagenes)
 	done();
 }
-exports.css = css;
-exports.dev = dev;
-exports.imagenes = imagenes;
-exports.default = series( imagenes, css, dev);
+export {
+	css as css,
+	dev as dev,
+	imagenes as imagenes
+}
+export default series( imagenes, css, dev);
