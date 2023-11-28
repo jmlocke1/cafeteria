@@ -8,6 +8,9 @@
 	@include m.telefono{
 		padding: 2rem 0;
 	}
+	@include m.tablet{
+		min-height: 70rem;
+	}
 	&::before {
 		content: '';
 		background-color: v.$negro;
@@ -20,6 +23,16 @@
 	}
 	.contenido-header {
 		position: relative;
+
+		h1 {
+			text-align: center;
+			color: v.$blanco;
+			text-transform: uppercase;
+			margin-top: 5rem;
+			@include m.tablet{
+				margin-top: 10rem;
+			}
+		}
 	}
 }
 
