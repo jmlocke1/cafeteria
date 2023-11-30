@@ -16,9 +16,44 @@
 	src: url('fonts/Roboto/Roboto-Black.ttf');
 	font-weight: 900;
 }
-$fuentePrincipal: 'Roboto', sans-serif;
-$fuentePrincipalBold : 'Roboto-Bold' , sans-serif;
-$fuentePrincipalBlack: 'Roboto-Black' , sans-serif;
+@font-face {
+	font-family: "Raleway";
+	src: url('fonts/Raleway/Raleway-VariableFont_wght.ttf');
+	font-style: normal;
+}
+@font-face {
+	font-family: "Raleway-Italic";
+	src: url('fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf');
+	font-style: italic;
+}
+@font-face {
+	font-family: "BonaNova";
+	src: url('fonts/BonaNova/BonaNova-Regular.ttf');
+	font-style: normal;
+	font-weight: 400;
+}
+@font-face {
+	font-family: "BonaNova-Italic";
+	src: url('fonts/BonaNova/BonaNova-Italic.ttf');
+	font-style: italic;
+	font-weight: 400;
+}
+@font-face {
+	font-family: "BonaNova-Bold";
+	src: url('fonts/BonaNova/BonaNova-Bold.ttf');
+	font-style: normal;
+	font-weight: 700;
+}
+$fuentePrincipal: 'Raleway', sans-serif;
+$fuentePrincipalItalic : 'Raleway-Italic' , sans-serif;
+
+$fuenteSecundaria: 'Roboto', sans-serif;
+$fuenteSecundariaBold: 'Roboto-Bold', sans-serif;
+$fuenteSecundariaBlack: 'Roboto-Black', sans-serif;
+
+$fuenteCursiva: 'BonaNova', serif;
+$fuenteCursivaItalic: 'BonaNova-Italic', serif;
+$fuenteCursivaBold: 'BonaNovaBold', serif;
 
 // Media Queries
 $telefono: 480px;
