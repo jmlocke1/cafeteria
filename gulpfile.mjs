@@ -32,7 +32,7 @@ function css( done ) {
 		// .pipe( sass({ outputStyle: 'compressed'}) )
 		.pipe( sass() )
 		.pipe( postcss([autoprefixer()]) )
-		.pipe( dest('build/css') )
+		.pipe( dest('build/css') );
 	done();
 }
 
