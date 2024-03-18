@@ -31,5 +31,8 @@
   },
   "browserslist": [
     "cover 99.5%"
-  ]
+  ],
+  "dependencies": {
+    "gulp-cli": "^2.3.0"
+  }
 }
