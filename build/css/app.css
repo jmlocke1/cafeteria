@@ -510,6 +510,9 @@ h3 {
 .header-nosotros {
   background-image: url(../img/header_nosotros.jpg);
 }
+.header-proceso {
+  background-image: url(../img/header_proceso.jpg);
+}
 
 .nav-principal {
   display: -webkit-box;
@@ -889,4 +892,55 @@ h3 {
   margin: 0;
   padding: 1rem;
   font-size: 2rem;
+}
+
+.proceso-cafe {
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .proceso-cafe {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    gap: 5rem;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+            align-items: center;
+  }
+  .proceso-cafe .imagen,
+  .proceso-cafe .texto {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+       -moz-box-flex: 1;
+            flex: 1;
+  }
+  .proceso-cafe:nth-child(even) .texto {
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+       -moz-box-ordinal-group: 0;
+            order: -1;
+  }
+}
+.proceso-cafe:last-of-type {
+  margin-bottom: 0;
+}
+.proceso-cafe .texto {
+  margin-top: 1rem;
+}
+.proceso-cafe .texto h3 {
+  margin: 0;
+  text-align: left;
+  color: #5E311E;
+}
+.proceso-cafe .texto h3::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 0.5rem;
+  background-color: #C39C63;
+}
+.proceso-cafe img {
+  width: 100%;
 }
