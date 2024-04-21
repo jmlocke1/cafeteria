@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cafetería SASS</title>
+	<link rel="stylesheet" href="build/css/app.css">
+</head>
+<body>
+	<header class="header header-nosotros">
+		<div class="contenido-header contenedor">
+			<div class="barra">
+				<div class="logo">
+					<img src="build/img/logo.svg" alt="Logo cafetería">
+				</div>
+				<nav class="nav-principal">
+					<a href="index.html">Inicio</a>
+					<a class="activo" href="nosotros.html">Nosotros</a>
+					<a href="proceso.html">Proceso</a>
+					<a href="menu.html">Menú</a>
+					<a href="galeria.html">Galería</a>
+					<a href="contacto.html">Contacto</a>
+				</nav>
+			</div>
+			<div class="texto-header">
+				<h1>Una nueva experiencia cada día</h1>
+			</div>
+		</div>
+	</header>
+	<main class="contenedor contenido-principal">
+		<section class="conoce">
+			<h2><span>Conoce más</span> sobre nosotros</h2>
+
+            <div class="contenido-nosotros">
+                <div class="imagen">
+                    <picture>
+                        <source srcset="build/img/nosotros_sidebar.avif" type="image/avif">
+                        <source srcset="build/img/nosotros_sidebar.webp" type="image/webp">
+                        <img loading="lazy" src="build/img/nosotros_sidebar.jpg" width="500" heigth="300" alt="Imagen de una chica de espaldas pidiendo un café" title="Chica de espaldas pidiendo un café">
+                    </picture>
+                </div>
+                <div class="texto">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos ducimus, quos quo, laudantium temporibus ratione odit officia labore incidunt vitae repellat beatae corrupti nam. Quis dolor possimus illum unde! Excepturi?</p>
+                    <blockquote>¡Excelente Sabor!</blockquote>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos ducimus, quos quo, laudantium temporibus ratione odit officia labore incidunt vitae repellat beatae corrupti nam. Quis dolor possimus illum unde! Excepturi?</p>
+                </div>
+            </div>
+			
+		</section>
+	</main>
+	
+
+	<footer class="footer">
+		<div class="contenedor contenido-footer bg-white">
+			<div class="footer-box ubicacion">
+				<h3>Ubicación</h3>
+				<p>Plaza de las Canteras 10</p>
+				<p>Zaragoza</p>
+			</div>
+			<div class="footer-box reservacion">
+				<h3>Reservas</h3>
+				<p>Tel. 976 662 653</p>
+				<a href="tel:+976662653">Llamar</a>
+			</div>
+			<div class="footer-box horario">
+				<h3>Horario</h3>
+				<p>Lun-Jue: 11:00 - 22:00</p>
+				<p>Vie-Sab: 09:00 - 24:00</p>
+				<p>Domingo: Cerrado</p>
+			</div>
+		</div>
+		<p class="copyright">Todos los derechos reservados. La Cafetería</p>
+	</footer>
+</body>
+</html>
