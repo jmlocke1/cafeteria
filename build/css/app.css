@@ -513,6 +513,9 @@ h3 {
 .header-proceso {
   background-image: url(../img/header_proceso.jpg);
 }
+.header-menu {
+  background-image: url(../img/header_menu.jpg);
+}
 
 .nav-principal {
   display: -webkit-box;
@@ -943,4 +946,32 @@ h3 {
 }
 .proceso-cafe img {
   width: 100%;
+}
+
+.contenido-menu {
+  background-image: url(../img/cafe.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
+  aspect-ratio: 3/5;
+}
+@media (min-width: 480px) {
+  .contenido-menu {
+    aspect-ratio: 3/4;
+  }
+}
+@media (min-width: 768px) {
+  .contenido-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    aspect-ratio: 16/6;
+    -webkit-background-size: 40% 40%;
+            background-size: 40%;
+    background-position: bottom right;
+  }
+}
+.contenido-menu .texto {
+  font-size: 2rem;
 }
