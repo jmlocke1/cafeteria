@@ -10,7 +10,11 @@
     @include m.telefono{
         aspect-ratio: 3 / 4;
     }
-    @include m.tablet{
+    @include m.tablet {
+        background-size: 90%;
+        aspect-ratio: 3 / 3;
+    }
+    @include m.desktop{
         @include m.grid(2, v.$separacion);
         aspect-ratio: 16 / 6;
         background-size: 40%;

@@ -450,18 +450,6 @@ h3 {
   font-size: 3.2rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.bg-white {
-  background-color: #FFF;
-}
-
-.margin-negativo-10 {
-  margin-top: -10rem;
-}
-
 .header {
   padding: 5rem 0;
   position: relative;
@@ -963,6 +951,13 @@ h3 {
 }
 @media (min-width: 768px) {
   .contenido-menu {
+    -webkit-background-size: 90% 90%;
+            background-size: 90%;
+    aspect-ratio: 3/3;
+  }
+}
+@media (min-width: 1024px) {
+  .contenido-menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
@@ -974,4 +969,36 @@ h3 {
 }
 .contenido-menu .texto {
   font-size: 2rem;
+}
+
+.padding-bottom-0 {
+  padding-bottom: 0px;
+}
+
+.padding-bottom-4 {
+  padding-bottom: 4px;
+}
+
+.padding-bottom-8 {
+  padding-bottom: 8px;
+}
+
+.padding-bottom-12 {
+  padding-bottom: 12px;
+}
+
+.padding-bottom-16 {
+  padding-bottom: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-white {
+  background-color: #FFF;
+}
+
+.margin-negativo-10 {
+  margin-top: -10rem;
 }

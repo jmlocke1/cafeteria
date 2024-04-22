@@ -1,5 +1,13 @@
 @use 'base/variables' as v;
 
+$padding-bottom-values: 0, 4, 8, 12, 16;
+
+@each $value in $padding-bottom-values {
+	.padding-bottom-#{$value} {
+	  padding-bottom: $value + px;
+	}
+  }
+  
 .text-center {
 	text-align: center;
 }
