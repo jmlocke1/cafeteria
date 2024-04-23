@@ -504,6 +504,9 @@ h3 {
 .header-menu {
   background-image: url(../img/header_menu.jpg);
 }
+.header-galeria {
+  background-image: url(../img/header_galeria.jpg);
+}
 
 .nav-principal {
   display: -webkit-box;
