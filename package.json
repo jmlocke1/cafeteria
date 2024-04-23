@@ -18,7 +18,6 @@
   "homepage": "https://github.com/jmlocke1/cafeteria#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "cssnano": "^6.1.2",
     "gulp": "^4.0.2",
     "gulp-avif": "^1.1.1",
     "gulp-cache": "^1.1.3",

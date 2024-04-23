@@ -8,7 +8,6 @@ const sass = gulpSass(dartSass);
 // plumber evita que sass se detenga al encontrar un error
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
-import cssnano from 'cssnano';
 
 /**
  * En el package.json se debe añadir browserlist
@@ -17,7 +16,6 @@ import cssnano from 'cssnano';
  * 
  */
 import autoprefixer from 'autoprefixer';
-import sourcemaps from'gulp-sourcemaps';
 
 // Imágenes
 import cache from 'gulp-cache';
@@ -29,13 +27,11 @@ function css( done ) {
 	// Compilar sass
 	// pasos: 1 - Identificar archivo, 2- Compilarla, 3 - Guardar el .css
 	src('src/scss/app.scss')
-		.pipe( sourcemaps.init() )
 		.pipe( plumber() )
 		// Compila css minificado
 		// .pipe( sass({ outputStyle: 'compressed'}) )
 		.pipe( sass() )
-		.pipe( postcss([ autoprefixer(), cssnano() ]) )
-		.pipe( sourcemaps.write('.') )
+		.pipe( postcss([autoprefixer()]) )
 		.pipe( dest('build/css') );
 	done();
 }
