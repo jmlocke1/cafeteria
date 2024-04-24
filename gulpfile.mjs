@@ -16,6 +16,8 @@ import postcss from 'gulp-postcss';
  * 
  */
 import autoprefixer from 'autoprefixer';
+import sourcemaps from 'gulp-sourcemaps';
+import cssnano from 'cssnano';
 
 // Imágenes
 import cache from 'gulp-cache';
@@ -28,10 +30,12 @@ function css( done ) {
 	// pasos: 1 - Identificar archivo, 2- Compilarla, 3 - Guardar el .css
 	src('src/scss/app.scss')
 		.pipe( plumber() )
+		.pipe( sourcemaps.init() )
 		// Compila css minificado
 		// .pipe( sass({ outputStyle: 'compressed'}) )
 		.pipe( sass() )
-		.pipe( postcss([autoprefixer()]) )
+		.pipe( postcss([autoprefixer(), cssnano() ]) )
+		.pipe( sourcemaps.write('.') )
 		.pipe( dest('build/css') );
 	done();
 }
